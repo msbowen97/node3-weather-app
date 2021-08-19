@@ -11,7 +11,12 @@ const forecast = (lat, long, location, callback) => {
     } else if (body.error) {
       callback(body.error.info, undefined)
     } else {
-      callback(undefined, 'It is currently ' + body.current.temperature + ' degrees')
+      if (body.current.temperature === body.current.feelslike) {
+        callback(undefined, 'It is currently ' + body.current.temperature + ' degrees')
+      } else {
+        callback(undefined, 'It is currently ' + body.current.temperature + ' degrees but feels like ' + body.current.feelslike + ' degrees')
+      }
+
     }
   })
 }
