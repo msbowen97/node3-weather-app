@@ -37,7 +37,7 @@ app.get('', (req, res) => {
 
 app.get('/about', (req, res) => {
   //Renders a dynamic hbs view in the views folder
-  res.render('index', {
+  res.render('about', {
     title: 'About Me',
     message: 'This page is about me.',
     name: 'Michael'
