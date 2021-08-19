@@ -36,15 +36,16 @@ app.get('', (req, res) => {
 
 app.get('/about', (req, res) => {
   //Renders a dynamic hbs view in the views folder
-  res.render('about', {
+  res.render('index', {
     title: 'About Me',
+    message: 'This page is about me.',
     name: 'Michael'
   })
 })
 
 app.get('/help', (req, res) => {
   //Renders a dynamic hbs view in the views folder
-  res.render('help', {
+  res.render('index', {
     title: 'Help Me',
     name: 'Michael',
     message: 'This is the help page!!!'
@@ -76,7 +77,7 @@ app.get('/weather', (req, res) => {
 })
 
 app.get('/help/*', (req, res) => {
-  res.render('error', {
+  res.render('index', {
     title: '404 Error',
     message: 'The specified help article could not be found',
     name: 'Michael'
@@ -84,7 +85,7 @@ app.get('/help/*', (req, res) => {
 })
 
 app.get('*', (req, res) => {
-  res.render('error', {
+  res.render('index', {
     title: '404 Error',
     message: 'The specified page could not be found',
     name: 'Michael'
