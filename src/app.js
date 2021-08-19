@@ -6,6 +6,7 @@ const forecast = require('./utils/forecast')
 const geocode = require('./utils/geocode')
 
 const app = express()
+const port = process.env.PORT || 3000
 
 //Setting up path for handlebars global dynamic pages and templating
 const viewsPath = path.join(__dirname, '../templates/views')
@@ -91,6 +92,6 @@ app.get('*', (req, res) => {
 })
 
 //Need a port to view in browser. This will only be available when running the code, not in the browser
-app.listen(3000, () => {
-  console.log('Server is up on port 3000')
+app.listen(port, () => {
+  console.log('Server is up on port ' + port)
 })
