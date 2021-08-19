@@ -30,6 +30,7 @@ app.get('', (req, res) => {
   //Renders a dynamic hbs view in the views folder
   res.render('index', {
     title: 'Weather App',
+    message: 'Welcome to the Weather App! Input a location below to get the current temperature.',
     name: 'Michael'
   })
 })
